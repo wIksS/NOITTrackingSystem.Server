@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83A2CBD9-E165-4A9C-BE24-9FC703DEA5E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrackingSystem.Services</RootNamespace>
+    <AssemblyName>TrackingSystem.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\IFileService.cs" />
+    <Compile Include="Contracts\ILocationService.cs" />
+    <Compile Include="Contracts\IGroupsService.cs" />
+    <Compile Include="Contracts\IEventsService.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="Contracts\ITeachersService.cs" />
+    <Compile Include="Contracts\IStudentsService.cs" />
+    <Compile Include="FilesService.cs" />
+    <Compile Include="LocationService.cs" />
+    <Compile Include="GroupsService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EventsService.cs" />
+    <Compile Include="UsersService.cs" />
+    <Compile Include="TeachersService.cs" />
+    <Compile Include="StudentsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrackingSystem.Common\TrackingSystem.Common.csproj">
+      <Project>{a8aa56c9-c9a6-49e9-9a60-97c9992dd73d}</Project>
+      <Name>TrackingSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackingSystem.Data\TrackingSystem.Data.csproj">
+      <Project>{824cad2c-9a46-45bd-b13a-5f10046c1de2}</Project>
+      <Name>TrackingSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackingSystem.Models\TrackingSystem.Models.csproj">
+      <Project>{d8d4e277-91d1-4c63-b0f1-47b646461f11}</Project>
+      <Name>TrackingSystem.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
